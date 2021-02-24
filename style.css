@@ -1,0 +1,23 @@
+.app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.dataCont {
+  height: 80vh;
+  width: 90vw;
+  border: 2px solid;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+}
+
+.cryptoItem {
+  height: 50%;
+  width: 30%;
+  border: 2px solid;
+  border-radius: 15px;
+  margin: 10px;
+}
