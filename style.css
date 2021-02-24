@@ -6,18 +6,63 @@
 }
 
 .dataCont {
-  height: 80vh;
+  height: 75vh;
   width: 90vw;
   border: 2px solid;
   display: flex;
   flex-wrap: wrap;
   overflow-y: scroll;
+  border-radius: 11px;
 }
 
 .cryptoItem {
-  height: 50%;
   width: 30%;
   border: 2px solid;
   border-radius: 15px;
   margin: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.itemHeader {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 15%;
+}
+
+/* --------------- ScrollBar --------------- */
+
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+  background-color: #4c6276;
+  border-top-right-radius: 10.5px;
+  border-bottom-right-radius: 10.5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgba(67, 112, 179, 0.844);
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #111e29;
+  border-radius: 7px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #222e41;
 }
