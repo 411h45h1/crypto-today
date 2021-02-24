@@ -8,7 +8,8 @@ app.getCryptoData = () => {
     method: "GET",
     dataType: "JSON",
   }).then((res) => {
-    return res.data.slice(0, app.coinswanted);
+    const controlledAmount = app.coinswanted > 100 ? 100 : app.coinswanted;
+    return res.data.slice(0, controlledAmount);
   });
 };
 
@@ -39,23 +40,21 @@ app.setCryptoData = () => {
             <div class="cryptoItem">
 
             <div class='itemHeader' >
-                <p > #${i.rank} </p>
-                <p > ${i.symbol} </p>
+                <h2> #${i.rank} </h2>
+                <h2> ${i.symbol} </h2>
             </div>
 
-                <h1>${i.name}</h1>
-                <p> Price: ${app.formatPrice(Number(i.priceUsd))} </p>
-                <p> Market Cap: ${app.formatLargeNumbers(
-                  Number(i.marketCapUsd)
-                )} </p>
-                <p> 24 hour volume: ${app.formatLargeNumbers(
-                  Number(i.volumeUsd24Hr)
-                )} </p>
-                <a href='${i.explorer}' target=”_blank” > Explorer Link  </a>
+            <h1>${i.name}</h1>
+            <p> Price: ${app.formatPrice(Number(i.priceUsd))} </p>
+            <p> Market Cap: ${app.formatLargeNumbers(
+              Number(i.marketCapUsd)
+            )} </p>
+            <p> 24 hour volume: ${app.formatLargeNumbers(
+              Number(i.volumeUsd24Hr)
+            )} </p>
+            <a href='${i.explorer}' target=”_blank” > Explorer Link  </a>
 
-              
-
-              </div>
+            </div>
               `;
 
       $(".dataCont").append(cryptoItem);
